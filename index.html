@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CRUDS</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="crud">
+    <div class="head">
+      <h2>CRUD</h2>
+      <p>PRODUCT MANAGEMENT SYSTEM</p>
+    </div>
+
+    <!-- input section -->
+    <div class="input">
+      <input placeholder="title" type="text" id="title">
+
+      <div class="price">
+        <input onkeyup="getTotal()" type="number" id="price" placeholder="price">
+        <input onkeyup="getTotal()" type="number" id="taxes" placeholder="taxes">
+        <input onkeyup="getTotal()" type="number" id="ads" placeholder="ads">
+        <input onkeyup="getTotal()" type="number" id="discount" placeholder="discount">
+        <small id="total"></small>
+      </div>
+
+      <input placeholder="count" type="number" id="count">
+      <input placeholder="category" type="text" id="category">
+      <button id="submit">Create</button>
+    </div>
+
+    <!-- search section -->
+    <div class="output">
+      <div class="searchblock">
+        <input onkeyup="searchData(this.value)" type="text" id="search" placeholder="search">
+        <div class="btnSearch">
+          <button onclick="getSearchMood(this.id)"  id="searchTitle">search By title</button>
+          <button  onclick="getSearchMood(this.id)" id="searchCategory">search By category</button>
+        </div>
+      </div>
+      <div id="deleteAll"></div>    
+        <!-- table section -->
+      <table>
+        <thead>
+          <tr>
+            <th>id</th>
+            <th>title</th>
+            <th>price</th>
+            <th>taxes</th>
+            <th>ads</th>
+            <th>discount</th>
+            <th>total</th>
+            <th>category</th>
+            <th>update</th>
+            <th>delete</th>
+          </tr>
+        </thead>
+        <tbody id="tbody">
+          <!-- هنا الـ JS هيكتب البيانات -->
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <script src="main.js"></script>
+</body>
+</html>
